@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Card Auto Unpublish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Contentstack Stack App</p>
+        <h1>Auto-Unpublish Old Event Cards</h1>
+        <p class="subtitle">Choose environments, run a safe preview, then execute unpublish in one click.</p>
+      </header>
+
+      <section class="card config-card">
+        <div class="grid two-col">
+          <label>
+            Branch
+            <input id="branch" value="main" />
+          </label>
+          <label>
+            Locale
+            <input id="locale" value="en-us" />
+          </label>
+        </div>
+        <div class="grid two-col">
+          <label>
+            Older Than (days)
+            <input id="days" type="number" min="1" value="7" />
+          </label>
+          <label>
+            Download File Name
+            <input id="fileName" value="event_card_unpublish_results.csv" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Environment Selection</h2>
+          <div class="tiny-actions">
+            <button id="loadEnvsBtn" class="ghost">Load</button>
+            <button id="selectAllBtn" class="ghost">Select All</button>
+            <button id="clearBtn" class="ghost">Clear</button>
+          </div>
+        </div>
+        <div id="envContainer" class="env-grid"></div>
+      </section>
+
+      <section class="action-row">
+        <button id="dryRunBtn" class="primary">Dry Run</button>
+        <button id="executeBtn" class="danger">Real Run</button>
+        <button id="downloadBtn" class="ghost">Download CSV</button>
+      </section>
+
+      <section class="card output-card">
+        <div class="section-head">
+          <h2>Result</h2>
+          <span id="summaryPill" class="pill">Idle</span>
+        </div>
+        <pre id="logBox"></pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "contentstack-event-unpublish-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contentstack custom app backend + embedded UI for auto-unpublishing old event cards",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
